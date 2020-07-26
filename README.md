@@ -21,7 +21,8 @@ quantumMachine.addGate(new Oracle(0, 2, 2, (x) -> {
 }));
 ...
 ```
-
+## Installation
+Download the latest "fat" jar file from the [releases](https://github.com/armytricks/qxn/releases/latest) and import into your java project.
 ## Getting Started
 STEP 1: Construct a quantum machine with your desired number of qubits
 ```java
