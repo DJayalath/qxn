@@ -42,6 +42,11 @@ STEP 3: Run your quantum algorithm
 myQuantumMachine.execute(); // Executes the quantum algorithm on the virtual quantum machine
 myQuantumMachine.printState(); // Shows the final resulting bit strings and their respective probabilities
 ```
+Some Notes:
+- Wires/Qubits are indexed starting from zero
+- The quantum virtual machine executes gates in the order they are added
+- The quantum machine will clear the internal set of gates after calling `execute()`
+
 ## Using oracles
 The defining feature of **qxn** is the ability to define oracles not only via a matrix but also through lambda
 functions.
