@@ -9,7 +9,6 @@ import org.qxn.linalg.ComplexMatrix;
  */
 public class R extends Gate {
 
-    public final ComplexMatrix R = new ComplexMatrix(2, 2);
 
     /**
      * Constructs phase shift gate R
@@ -17,12 +16,13 @@ public class R extends Gate {
      * @param phi Phase shift
      */
     public R(int inputWire, double phi) {
-        R.data[0][0].real = 1;
-        R.data[1][1] = Complex.complexFromModulusArgument(1.0, phi);
+
+        matrix = new ComplexMatrix(2, 2);
+        matrix.data[0][0].real = 1;
+        matrix.data[1][1] = Complex.complexFromModulusArgument(1.0, phi);
 
         this.numInputs = 1;
         this.startWire = inputWire;
-        this.matrix = R;
     }
 
 }
