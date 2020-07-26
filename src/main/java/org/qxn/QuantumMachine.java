@@ -119,6 +119,8 @@ public class QuantumMachine {
      */
     public int measure(int qubit) {
 
+        assert qubit >= 0 && qubit < numWires : "Qubit to measure must exist in machine";
+
         double setProb = 0;
 
         // Sum probabilities that this qubit will be set
