@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Documentation](https://img.shields.io/badge/doc-javadoc-orange)](https://dulhanjayalath.com/qxn/overview-tree.html)
 
+[Releases](https://github.com/armytricks/qxn/releases/latest) | [License](LICENSE) | [Documentation](https://dulhanjayalath.com/qxn/overview-tree.html)
+
 **qxn** is an open-source library for noiseless quantum circuit and algorithm simulation.
 
 qxn is designed for mocking and verifying the behaviour of quantum algorithms quickly and efficiently through programmatically
@@ -19,6 +21,7 @@ quantumMachine.addGate(new Oracle(0, 2, 2, (x) -> {
 }));
 ...
 ```
+
 ## Getting Started
 STEP 1: Construct a quantum machine with your desired number of qubits
 ```java
