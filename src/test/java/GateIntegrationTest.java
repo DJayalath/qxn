@@ -4,6 +4,7 @@ import org.qxn.QuantumMachine;
 import org.qxn.gates.*;
 import org.qxn.linalg.Complex;
 import org.qxn.linalg.ComplexMatrix;
+import org.qxn.linalg.ComplexMatrixMath;
 
 import java.util.Random;
 
@@ -257,6 +258,82 @@ public class GateIntegrationTest {
         expected.data[1][0].real = 1;
 
         assertTrue(result.equals(expected));
+    }
+
+    @Test
+    void testQFT() {
+        QFT qft = new QFT(0, 2);
+        ComplexMatrix result = qft.getMatrix();
+
+        ComplexMatrix expected = new ComplexMatrix(1 << 2, 1 << 2);
+
+        expected.data[0][0].real = 1;
+        expected.data[0][1].real = 1;
+        expected.data[0][2].real = 1;
+        expected.data[0][3].real = 1;
+
+        expected.data[1][0].real = 1;
+        expected.data[1][1].imaginary = 1;
+        expected.data[1][2].real = -1;
+        expected.data[1][3].imaginary = -1;
+
+        expected.data[2][0].real = 1;
+        expected.data[2][1].real = -1;
+        expected.data[2][2].real = 1;
+        expected.data[2][3].real = -1;
+
+        expected.data[3][0].real = 1;
+        expected.data[3][1].imaginary = -1;
+        expected.data[3][2].real = -1;
+        expected.data[3][3].imaginary = 1;
+
+        expected = ComplexMatrixMath.scale(new Complex(0.5, 0.0), expected);
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                assertEquals(expected.data[i][j].real, result.data[i][j].real, 0.01);
+                assertEquals(expected.data[i][j].imaginary, result.data[i][j].imaginary, 0.01);
+            }
+        }
+
+    }
+
+    @Test
+    void testQFTHA() {
+        QFTHA qftha = new QFTHA(0, 2);
+        ComplexMatrix result = qftha.getMatrix();
+
+        ComplexMatrix expected = new ComplexMatrix(1 << 2, 1 << 2);
+
+        expected.data[0][0].real = 1;
+        expected.data[0][1].real = 1;
+        expected.data[0][2].real = 1;
+        expected.data[0][3].real = 1;
+
+        expected.data[1][0].real = 1;
+        expected.data[1][1].imaginary = 1;
+        expected.data[1][2].real = -1;
+        expected.data[1][3].imaginary = -1;
+
+        expected.data[2][0].real = 1;
+        expected.data[2][1].real = -1;
+        expected.data[2][2].real = 1;
+        expected.data[2][3].real = -1;
+
+        expected.data[3][0].real = 1;
+        expected.data[3][1].imaginary = -1;
+        expected.data[3][2].real = -1;
+        expected.data[3][3].imaginary = 1;
+
+        expected = ComplexMatrixMath.scale(new Complex(0.5, 0.0), expected);
+        expected = ComplexMatrixMath.hermitianAdjoint(expected);
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                assertEquals(expected.data[i][j].real, result.data[i][j].real, 0.01);
+                assertEquals(expected.data[i][j].imaginary, result.data[i][j].imaginary, 0.01);
+            }
+        }
     }
 
 
