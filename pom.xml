@@ -6,7 +6,7 @@
 
     <groupId>org.qxn</groupId>
     <artifactId>qxn</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
