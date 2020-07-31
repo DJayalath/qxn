@@ -1,6 +1,7 @@
 [![qxn](qxn.png)](https://github.com/armytricks/qxn)
 # qxn
 
+[![Release](https://img.shields.io/github/v/release/armytricks/qxn?color=blueviolet)](https://github.com/armytricks/qxn/releases/latest)
 [![Build](https://travis-ci.org/armytricks/qxn.svg?branch=master)](https://github.com/armytricks/qxn/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Documentation](https://img.shields.io/badge/doc-javadoc-orange)](https://dulhanjayalath.com/qxn/overview-tree.html)
