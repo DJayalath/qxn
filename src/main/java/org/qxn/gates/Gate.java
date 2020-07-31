@@ -2,7 +2,9 @@ package org.qxn.gates;
 
 import org.qxn.linalg.ComplexMatrix;
 
-public abstract class Gate {
+import java.io.Serializable;
+
+public abstract class Gate implements Serializable {
 
     protected int numInputs;
     protected int startWire;

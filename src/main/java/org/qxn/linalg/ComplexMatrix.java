@@ -1,6 +1,8 @@
 package org.qxn.linalg;
 
-public class ComplexMatrix {
+import java.io.Serializable;
+
+public class ComplexMatrix implements Serializable {
 
     public Complex[][] data;
 

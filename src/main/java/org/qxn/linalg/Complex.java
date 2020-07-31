@@ -1,6 +1,8 @@
 package org.qxn.linalg;
 
-public class Complex {
+import java.io.Serializable;
+
+public class Complex implements Serializable {
 
     public double real;
     public double imaginary;
