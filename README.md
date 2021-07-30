@@ -13,6 +13,8 @@
 qxn is designed for mocking and verifying the behaviour of quantum algorithms quickly and efficiently through programmatically
 defined quantum oracles.
 
+An unmaintained [GUI](https://github.com/armytricks/VisualQXN) for this library is also available.
+
 ```java
 ...
 quantumMachine.addGate(new Oracle(0, 2, 2, (x) -> {
